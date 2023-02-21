@@ -2,11 +2,23 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app_form {
+  /* background-color: red; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 20px;
+  background-color: #e9e9eb;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  z-index: 1;
 }
-
+.input_field {
+  flex: 1;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

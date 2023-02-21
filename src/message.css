@@ -1,0 +1,25 @@
+.stack {
+  /* max-width: 2000px !important; */
+}
+.message {
+  margin: 5px;
+  /* padding: 5px; */
+  width: fit-content;
+  /* background-color: rgb(228, 226, 226) !important; */
+}
+
+.message_user {
+  margin-left: auto;
+  text-align: left !important;
+
+  /* background-color: rgb(175, 175, 223) !important; */
+  /* border-radius: 15px !important; */
+}
+.message_userCard {
+  background-color: #0b81ff !important;
+  border-radius: 30px 20px !important;
+}
+.message_guestCard {
+  background-color: #e9e9eb !important;
+  border-radius: 20px 30px !important;
+}
