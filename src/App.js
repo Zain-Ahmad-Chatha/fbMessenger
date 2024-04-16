@@ -35,7 +35,6 @@ const App = () => {
   const [percent, setPercent] = useState(0);
   useEffect(() => {
     setUserName(prompt("Enter your Name ? "));
-
     const q = query(collection(db, "messages"), orderBy("createdAt", "desc"));
 
     const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
@@ -107,6 +106,7 @@ const App = () => {
       <h1>Welcome to {username} </h1>
       <form className="app_form" onSubmit={(e) => onSubmit(e)}>
         <TextField
+          autoFocus={true}
           id="messageInput"
           name="messageInput"
           label="Enter Your Message"
@@ -114,19 +114,26 @@ const App = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="input_field"
+          size="small"
         />
-        <input type="file" onChange={(e) => handleImageAsFile(e)} />
-        {imageAsFile && (
-          <Button onClick={() => onUploadImage()}>
-            <UploadIcon />
-          </Button>
-        )}
+        <div className="bottom-form">
+          <input
+            type="file"
+            onChange={(e) => handleImageAsFile(e)}
+            className="file-input"
+          />
+          {imageAsFile && (
+            <Button onClick={() => onUploadImage()}>
+              <UploadIcon />
+            </Button>
+          )}
 
-        {imageAsFile && <p>{percent} "% DONE"</p>}
+          {imageAsFile && <p>{percent} "% DONE"</p>}
 
-        <IconButton type="submit" variant="contained" disabled={!input}>
-          <SendIcon />
-        </IconButton>
+          <IconButton type="submit" variant="contained" disabled={!input}>
+            <SendIcon />
+          </IconButton>
+        </div>
       </form>
       {
         // messages list down

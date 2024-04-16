@@ -19,6 +19,15 @@
 .input_field {
   flex: 1;
 }
+.bottom-form {
+  flex: 0;
+  justify-content: end;
+  display: flex;
+  align-items: center;
+}
+.file-input {
+  width: 90px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
